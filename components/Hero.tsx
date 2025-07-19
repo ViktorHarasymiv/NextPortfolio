@@ -10,7 +10,7 @@ import { FaLocationArrow } from "react-icons/fa";
 export const Hero = () => {
   return (
     <div className="pb-20 pt-36">
-      {/* <ModeToggle /> */}
+      <ModeToggle></ModeToggle>
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -23,17 +23,19 @@ export const Hero = () => {
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
       {/* Radial gradient for the container to give a faded look */}
-      <div className="absolute top-0 left-0  h-screen w-full flex items-center justify-center bg-white dark: bg-black-100">
+      <div
+        className="h-screen w-full dark:bg-black-100 bg-black-100 dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
+       absolute top-0 left-0 flex items-center justify-center"
+      >
         <div
           className={cn(
             "absolute inset-0",
             "[background-size:100px_100px]",
-            "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-            "dark:[background-image:linear-gradient(to_right,#242323,transparent_1px),linear-gradient(to_bottom,#242323,transparent_1px)]"
+            "[background-image:linear-gradient(to_right,#242323,transparent_1px),linear-gradient(to_bottom,#242323,transparent_1px)]"
           )}
         />
         {/* Radial gradient for the container to give a faded look */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark: bg-black-100"></div>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] bg-black-100"></div>
       </div>
       {/* Text */}
       <div className="flex justify-center relative my-20 z-10">
@@ -47,7 +49,7 @@ export const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 mt-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Adrian, a Next.js Developer based in Croatia.
+            Hi! I&apos;m Wiktor, a Next.js Developer based in Warsaw.
           </p>
           <a href="#about">
             <MagicButton

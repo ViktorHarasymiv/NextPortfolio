@@ -1,6 +1,5 @@
 import { Grid } from "@/components/Grid";
 import { Hero } from "@/components/Hero";
-import { ModeToggle } from "@/components/ModeToggle";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { FaHome } from "react-icons/fa";
 
