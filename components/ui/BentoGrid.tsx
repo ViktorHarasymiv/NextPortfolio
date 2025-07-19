@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { BackgroundGradientAnimation } from "./background-gradient-animation";
+import { BackgroundGradientAnimation } from "./BackgroundGrid";
 import { GridGlobe } from "./GridGlobe";
 import Lottie from "react-lottie";
 import { useState } from "react";
@@ -48,8 +48,8 @@ export const BentoGridItem = ({
   imgClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["React.js", "Next.js", "TypeScript"];
+  const rightLists = ["JSX", "SCSS", "MongoDB"];
 
   const [copie, setCopie] = useState(false);
 
@@ -112,8 +112,8 @@ export const BentoGridItem = ({
           </div>
           {id === 2 && <GridGlobe></GridGlobe>}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute top-0 right-2  lg:-right-0">
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+            <div className="flex gap-1 lg:gap-4 w-fit absolute -right-3  lg:-right-2">
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-6">
                 {leftLists.map((item) => (
                   <span
                     key={item}
@@ -125,7 +125,7 @@ export const BentoGridItem = ({
                 ))}
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
               </div>
-              <div className="flex flex-col gap-3 lg:gap-8">
+              <div className="flex flex-col gap-3 lg:gap-6">
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
                 {rightLists.map((item) => (
                   <span

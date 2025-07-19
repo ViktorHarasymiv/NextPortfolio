@@ -116,6 +116,7 @@
 
 @layer base {
   :root {
+    --line-height: 1;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -181,12 +182,17 @@
 @layer base {
   * {
     @apply border-border !scroll-smooth;
+    line-height: var(--line-height);
   }
   body {
     @apply bg-background text-foreground;
-    line-height: var(--line-height);
   }
   button {
     @apply active:outline-none;
+  }
+
+  svg {
+    width: 11px;
+    height: 11px;
   }
 }

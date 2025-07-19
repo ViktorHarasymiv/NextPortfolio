@@ -6,9 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Wiktor.Software Engineer",
-  description:
-    "Software Engineer(HTML, CSS, JavaScript, React/Next.js, TypeScripts)",
+  title: "Wiktor. React/Next.js Engineer",
+  description: "Software Engineer React/Next.js",
 };
 
 type RootLayoutProps = {
