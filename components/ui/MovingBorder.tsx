@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import { PropsWithChildren } from "react";
+
 import {
   motion,
   useAnimationFrame,
@@ -10,34 +12,32 @@ import {
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-export function Button({
+type ButtonProps<T extends React.ElementType = "button"> = PropsWithChildren<{
+  as?: T;
+  borderRadius?: string;
+  containerClassName?: string;
+  borderClassName?: string;
+  duration?: number;
+  className?: string;
+}> &
+  React.ComponentPropsWithoutRef<T>;
+
+export function Button<T extends React.ElementType = "button">({
   borderRadius = "1.75rem",
   children,
-  as: Component = "button",
   containerClassName,
   borderClassName,
   duration,
   className,
   ...otherProps
-}: {
-  borderRadius?: string;
-  children: React.ReactNode;
-  as?: any;
-  containerClassName?: string;
-  borderClassName?: string;
-  duration?: number;
-  className?: string;
-  [key: string]: React.ReactNode;
-}) {
+}: ButtonProps<T>) {
   return (
-    <Component
+    <button
       className={cn(
         "relative overflow-hidden bg-transparent p-[1px] text-xl md:col-span-2",
         containerClassName
       )}
-      style={{
-        borderRadius: borderRadius,
-      }}
+      style={{ borderRadius }}
       {...otherProps}
     >
       <div
@@ -59,13 +59,11 @@ export function Button({
           "relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/[0.8] text-sm text-white antialiased backdrop-blur-xl",
           className
         )}
-        style={{
-          borderRadius: `calc(${borderRadius} * 0.96)`,
-        }}
+        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
       >
         {children}
       </div>
-    </Component>
+    </button>
   );
 }
 
